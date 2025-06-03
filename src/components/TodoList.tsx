@@ -54,16 +54,6 @@ function TodoList({ template, customer, updateCustomer, updateTemplate, onComple
     updateTemplate({ ...template, items: [...template.items, newItem] });
   };
 
-  const resetChecked = () => {
-    updateCustomer({
-      ...customer,
-      checklist: {
-        ...customer.checklist,
-        checked: {},
-      },
-    });
-  };
-
   return (
     <div>
       <h2>{template.name}</h2>
