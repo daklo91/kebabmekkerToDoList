@@ -143,25 +143,26 @@ const deleteTemplate = (id: string) => {
 
 
   return (
-    <div className="p-4 space-y-4">
+  <div className="p-4 space-y-4 flex items-center justify-center h-screen">
+    <div>
       <OrderTabs
-        orders={data.orders}
-        selectedId={selectedOrderId}
-        onSelect={setSelectedOrderId}
-        onAdd={() => setShowTemplateModal(true)}
-        onRemove={removeOrder}
+      orders={data.orders}
+      selectedId={selectedOrderId}
+      onSelect={setSelectedOrderId}
+      onAdd={() => setShowTemplateModal(true)}
+      onRemove={removeOrder}
+    />
+
+    {selectedOrder && selectedTemplate && (
+      <TodoList
+        order={selectedOrder}
+        updateOrder={updateOrder}
+        template={selectedTemplate}
+        onCompleteOrder={() => removeOrder(selectedOrder.id)}
       />
+    )}
 
-      {selectedOrder && selectedTemplate && (
-        <TodoList
-          order={selectedOrder}
-          updateOrder={updateOrder}
-          template={selectedTemplate}
-          onCompleteOrder={() => removeOrder(selectedOrder.id)}
-        />
-      )}
-
-          {showTemplateModal && (
+    {showTemplateModal && (
       <TemplatePickerModal
         templates={data.templates}
         onClose={() => setShowTemplateModal(false)}
@@ -172,27 +173,27 @@ const deleteTemplate = (id: string) => {
       />
     )}
 
-
     {showManager && (
-  <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50">
-    <div className="bg-white p-6 rounded-xl shadow-xl max-h-screen overflow-y-auto">
-      <TemplateManager
-        templates={data.templates}
-        selectedTemplateId={selectedTemplateId}
-        setSelectedTemplateId={setSelectedTemplateId}
-        updateTemplate={updateTemplate}
-        deleteTemplate={deleteTemplate}
-        createTemplate={createTemplate}
-      />
-      <div className="text-right mt-4">
-        <button onClick={() => setShowManager(false)}>Lukk</button>
+      <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50">
+        <div className="bg-white p-6 rounded-xl shadow-xl max-h-screen overflow-y-auto">
+          <TemplateManager
+            templates={data.templates}
+            selectedTemplateId={selectedTemplateId}
+            setSelectedTemplateId={setSelectedTemplateId}
+            updateTemplate={updateTemplate}
+            deleteTemplate={deleteTemplate}
+            createTemplate={createTemplate}
+          />
+          <div className="text-right mt-4">
+            <button onClick={() => setShowManager(false)}>Lukk</button>
+          </div>
+        </div>
       </div>
+    )}
+
+    <button className="absolute top-0 right-0 mt-5 mr-5 bg-primary-color" onClick={() => setShowManager(true)}>⚙️ Rediger maler</button>
     </div>
   </div>
-)}
-<button onClick={() => setShowManager(true)}>⚙️ Rediger maler</button>
-
-    </div>
   );
 }
 
