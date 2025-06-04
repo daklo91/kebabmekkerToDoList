@@ -1,30 +1,36 @@
-export type TodoItemId = string;
+export type ItemId = string;
 export type TemplateId = string;
-export type CustomerId = string;
+export type OrderId = string;
 
-export type TodoItem = {
-  id: TodoItemId;
+export type TemplateItem = {
+  id: ItemId;
   text: string;
+  price?: number;
 };
 
-export type TodoListTemplate = {
-  id: TemplateId;
+export type Template = {
+  id: string;
   name: string;
-  items: TodoItem[];
+  basePrice?: number;
+  requiredItems: TemplateItem[];
+  optionalItems: TemplateItem[];
 };
 
-export type CustomerChecklist = {
-  listId: TemplateId;
-  checked: Record<TodoItemId, boolean>;
+export type OrderItem = {
+  id: ItemId;
+  text: string;
+  price?: number;
+  checked: boolean;
 };
 
-export type Customer = {
-  id: CustomerId;
+export type Order = {
+  id: OrderId;
+  templateId: TemplateId;
   name: string;
-  checklist: CustomerChecklist;
+  items: OrderItem[];
 };
 
 export type AppData = {
-  templates: TodoListTemplate[];
-  customers: Customer[];
+  templates: Template[];
+  orders: Order[];
 };
