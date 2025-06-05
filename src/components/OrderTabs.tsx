@@ -10,7 +10,7 @@ type Props = {
 
 function OrderTabs({ orders, selectedId, onSelect, onAdd, onRemove }: Props) {
   return (
-    <div className="flex space-x-2 mb-4">
+    <div className="flex space-x-2 mb-2">
       {orders.map((order) => (
         <div
           key={order.id}

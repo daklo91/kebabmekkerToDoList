@@ -4,6 +4,7 @@ import OrderTabs from "./components/OrderTabs";
 import TodoList from "./components/TodoList";
 import TemplatePickerModal from "./components/TemplatePickerModal";
 import TemplateManager from "./components/TemplateManager";
+import kebabBg from './assets/kebab.png';
 
 const LOCAL_KEY = "appData";
 
@@ -146,10 +147,16 @@ function App() {
 
   return (
     <div
-      style={{ backgroundImage: `url('/src/assets/kebab.png')` }}
+      style={{ backgroundImage: `url(${kebabBg})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center', }}
       className="p-4 space-y-4 flex items-center justify-center h-screen"
     >
       <div>
+        <h1 className="text-5xl font-extrabold text-white text-center tracking-wide kebab-outline mb-5">
+          KEBAB TODO
+        </h1>
         <OrderTabs
           orders={data.orders}
           selectedId={selectedOrderId}

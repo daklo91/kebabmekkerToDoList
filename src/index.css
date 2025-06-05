@@ -8,3 +8,14 @@
   --color-primary-dark: #872b06;
   --color-secondary-dark: #0c2706;
 }
+
+.kebab-outline {
+  color: white;
+  text-shadow:
+    -1px -1px 0 #f08f00,
+    1px -1px 0 #f08f00,
+    -1px 1px 0 #f08f00,
+    1px 1px 0 #f08f00,
+    0 0 10px #f08f00,
+    0 0 20px #f08f00;
+}

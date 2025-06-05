@@ -122,7 +122,7 @@ function TemplateManager({
           </div>
 
           <div>
-            <h3 className="font-semibold mt-4">Obligatoriske</h3>
+            <h3 className="font-semibold mt-4">Arbeidsflyt</h3>
             {template.requiredItems.map((item, i) => (
               <div key={item.id} className="flex space-x-2 mb-2">
                 <input
@@ -180,7 +180,7 @@ function TemplateManager({
           </div>
 
           <div>
-            <h3 className="font-semibold mt-4">Valgfrie</h3>
+            <h3 className="font-semibold mt-4">Ekstra</h3>
             {template.optionalItems.map((item, i) => (
               <div key={item.id} className="flex space-x-2 mb-2">
                 <input
