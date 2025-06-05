@@ -76,7 +76,7 @@ function App() {
 
   const createOrderFromTemplate = (template: Template) => {
     const id = crypto.randomUUID();
-    const name = `Order ${data.orders.length + 1}`;
+    const name = `Ordre ${data.orders.length + 1}`;
     const items = template.requiredItems.map((item) => ({
       id: item.id,
       text: item.text,
@@ -145,7 +145,10 @@ function App() {
   };
 
   return (
-    <div className="p-4 space-y-4 flex items-center justify-center h-screen">
+    <div
+      style={{ backgroundImage: `url('/src/assets/kebab.png')` }}
+      className="p-4 space-y-4 flex items-center justify-center h-screen"
+    >
       <div>
         <OrderTabs
           orders={data.orders}
@@ -177,7 +180,7 @@ function App() {
 
         {showManager && (
           <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50">
-            <div className="bg-white p-6 rounded-xl shadow-xl max-h-screen overflow-y-auto">
+            <div className="bg-primary text-text-color p-6 rounded-xl shadow-xl max-h-screen overflow-y-auto">
               <TemplateManager
                 templates={data.templates}
                 selectedTemplateId={selectedTemplateId}
@@ -194,10 +197,25 @@ function App() {
         )}
 
         <button
-          className="absolute top-0 right-0 mt-5 mr-5 bg-primary-color"
+          className="bg-secondary hover:bg-secondary-dark text-text-color py-2 px-4 rounded-lg border-[1px] border-primary-dark absolute top-0 right-0 mt-5 mr-5 bg-primary-color flex gap-2 items-center"
           onClick={() => setShowManager(true)}
         >
-          ⚙️ Rediger maler
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            className="lucide lucide-settings-icon lucide-settings"
+          >
+            <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+            <circle cx="12" cy="12" r="3" />
+          </svg>
+          <span>Rediger maler</span>
         </button>
       </div>
     </div>
