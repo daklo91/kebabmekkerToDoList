@@ -2,7 +2,7 @@ import type { Template } from "../types";
 
 type Props = {
   templates: Template[];
-  selectedTemplateId: string;
+  selectedTemplateId: string | null;
   setSelectedTemplateId: (id: string) => void;
   updateTemplate: (t: Template) => void;
   deleteTemplate: (id: string) => void;
