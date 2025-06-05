@@ -16,13 +16,20 @@ function createInitialData(): AppData {
         name: "Kebab",
         basePrice: 150,
         requiredItems: [
-          { id: "item-1", text: "Kebabkjøtt" },
-          { id: "item-2", text: "Salat" },
-          { id: "item-3", text: "Dressing" },
+          { id: "item-1", text: "Stor, liten, medium?" },
+          { id: "item-2", text: "Mild, medium, sterk?" },
+          { id: "item-3", text: "Ekstra?" },
+          { id: "item-4", text: "Stek kjøtt" },
+          { id: "item-5", text: "Gjør pita crispy" },
         ],
         optionalItems: [
           { id: "opt-1", text: "Ekstra kjøtt", price: 15 },
           { id: "opt-2", text: "Sterk saus" },
+          { id: "opt-3", text: "Medium saus" },
+          { id: "opt-4", text: "Mild saus" },
+          { id: "opt-5", text: "Ekstra løk", price: 10 },
+          { id: "opt-6", text: "Pomfri på toppen", price: 20 },
+          { id: "opt-7", text: "Brus", price: 30 },
         ],
       },
       {
@@ -30,13 +37,58 @@ function createInitialData(): AppData {
         name: "Falaffel",
         basePrice: 140,
         requiredItems: [
-          { id: "item-1", text: "Kebabkjøtt" },
-          { id: "item-2", text: "Salat" },
-          { id: "item-3", text: "Dressing" },
+          { id: "item-1", text: "Stor, liten, medium?" },
+          { id: "item-2", text: "Mild, medium, sterk?" },
+          { id: "item-3", text: "Ekstra?" },
+          { id: "item-4", text: "Stek falaffel" },
+          { id: "item-5", text: "Varm lefse" },
         ],
         optionalItems: [
           { id: "opt-1", text: "Ekstra kjøtt", price: 15 },
           { id: "opt-2", text: "Sterk saus" },
+          { id: "opt-3", text: "Medium saus" },
+          { id: "opt-4", text: "Mild saus" },
+          { id: "opt-5", text: "Ekstra potet", price: 10 },
+          { id: "opt-6", text: "Brus", price: 30 },
+        ],
+      },
+      {
+        id: "pizza",
+        name: "Pizza",
+        basePrice: 160,
+        requiredItems: [
+          { id: "item-1", text: "Velg størrelse (liten, medium, stor)" },
+          { id: "item-2", text: "Smør pizzasaus" },
+          { id: "item-3", text: "Legg på ost" },
+          { id: "item-4", text: "Velg kjøtt/fyll" },
+          { id: "item-5", text: "Stek i ovn (10 min)" },
+        ],
+        optionalItems: [
+          { id: "opt-1", text: "Ekstra ost", price: 20 },
+          { id: "opt-2", text: "Chiliolje" },
+          { id: "opt-3", text: "Ananas" },
+          { id: "opt-4", text: "Brus", price: 30 },
+          { id: "opt-5", text: "Pommes frites", price: 35 },
+          { id: "opt-6", text: "Hvitløksdressing", price: 10 },
+        ],
+      },
+      {
+        id: "hotdog",
+        name: "Pølse i brød",
+        basePrice: 90,
+        requiredItems: [
+          { id: "item-1", text: "Velg type pølse (wiener, grill, spicy)" },
+          { id: "item-2", text: "Varm pølse" },
+          { id: "item-3", text: "Varm brød/lefse" },
+          { id: "item-4", text: "Legg i brød" },
+        ],
+        optionalItems: [
+          { id: "opt-1", text: "Ketchup" },
+          { id: "opt-2", text: "Sennep" },
+          { id: "opt-3", text: "Rekesalat", price: 15 },
+          { id: "opt-4", text: "Løkringer", price: 10 },
+          { id: "opt-5", text: "Brus", price: 30 },
+          { id: "opt-6", text: "Ekstra pølse", price: 20 },
         ],
       },
     ],
@@ -197,7 +249,7 @@ function App() {
                 createTemplate={createTemplate}
               />
               <div className="text-right mt-4">
-                <button onClick={() => setShowManager(false)}>Lukk</button>
+                <button className="bg-primary-dark py-2 px-4 rounded-md" onClick={() => setShowManager(false)}>Lukk</button>
               </div>
             </div>
           </div>

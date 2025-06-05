@@ -19,3 +19,13 @@
     0 0 10px #f08f00,
     0 0 20px #f08f00;
 }
+
+button {
+  cursor: pointer;
+  transition: all ease 0.2s;
+}
+
+.div-button {
+  cursor: pointer;
+  transition: all ease 0.2s;
+}

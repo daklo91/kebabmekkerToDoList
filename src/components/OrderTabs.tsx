@@ -10,7 +10,7 @@ type Props = {
 
 function OrderTabs({ orders, selectedId, onSelect, onAdd, onRemove }: Props) {
   return (
-    <div className="flex space-x-2 mb-2">
+    <div className="flex justify-center space-x-2 mb-2">
       {orders.map((order) => (
         <div
           key={order.id}
@@ -18,7 +18,7 @@ function OrderTabs({ orders, selectedId, onSelect, onAdd, onRemove }: Props) {
             order.id === selectedId
               ? "bg-secondary hover:bg-secondary-dark"
               : "bg-primary hover:bg-primary-dark"
-          } text-text-color font-bold border-[1px] border-primary-dark rounded-md py-2 px-4 flex items-center space-x-1`}
+          } text-text-color font-bold border-[1px] border-primary-dark rounded-md py-2 px-4 flex items-center space-x-1 gap-2 div-button`}
         >
           <button onClick={() => onSelect(order.id)}>{order.name}</button>
           <button className="" onClick={() => onRemove(order.id)}>
@@ -42,7 +42,7 @@ function OrderTabs({ orders, selectedId, onSelect, onAdd, onRemove }: Props) {
         </div>
       ))}
       <button
-        className="bg-primary hover:bg-primary-dark border-[1px] border-primary-dark rounded-full py-2 px-2"
+        className="bg-primary hover:bg-primary-dark border-[1px] border-primary-dark rounded-full py-2 px-4 flex gap-2"
         onClick={onAdd}
       >
         <svg
@@ -60,6 +60,7 @@ function OrderTabs({ orders, selectedId, onSelect, onAdd, onRemove }: Props) {
           <path d="M5 12h14" />
           <path d="M12 5v14" />
         </svg>
+        <span className="text-bold text-text-color">Ny ordre</span>
       </button>
     </div>
   );

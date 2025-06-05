@@ -37,7 +37,7 @@ function TemplateManager({
   const template = templates.find((t) => t.id === selectedTemplateId);
 
   return (
-    <div className="p-4 border rounded space-y-4">
+    <div className="p-4 rounded space-y-4">
       <h2 className="text-xl font-bold mb-2">Template Manager</h2>
 
       {!template ? (

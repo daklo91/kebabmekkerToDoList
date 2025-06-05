@@ -175,8 +175,8 @@ function TodoList({ order, updateOrder, template, onCompleteOrder }: Props) {
         />
       )}
 
-      <div className="mt-4 font-bold w-full bg-lime-700 hover:bg-lime-600 text-text-color text-2xl py-2 px-4 rounded-lg border-[1px] border-primary-dark bg-primary-color flex gap-2 items-center">
-        <button className="m-auto" onClick={onCompleteOrder}>
+      <div className="div-button mt-4 font-bold w-full bg-lime-700 hover:bg-lime-600 text-text-color text-2xl py-2 px-4 rounded-lg border-[1px] border-primary-dark bg-primary-color flex gap-2 items-center">
+        <button className="m-auto w-full" onClick={onCompleteOrder}>
           Ordre ferdig
         </button>
       </div>
